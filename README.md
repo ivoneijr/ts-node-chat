@@ -32,7 +32,6 @@ This example is an implementation of an api with websockets in order to maintain
 [ ] Add api documentation (redoc)
 [ ] Add custom error handlers
 [ ] Add logger service with external transporter
-[ ] Add workers logic
 [ ] Add pm2
 [ ] Add test env
 [ ] Add db seeds
