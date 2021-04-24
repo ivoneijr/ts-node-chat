@@ -102,56 +102,83 @@
 		{
 			"name": "Messages",
 			"description": "",
-			"item": []
-		},
-		{
-			"name": "create messages",
-			"request": {
-				"url": "localhost:3000/messages",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+			"item": [
+				{
+					"name": "create messages",
+					"request": {
+						"url": "localhost:3000/messages",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"b579ce14-c8b5-4ce7-9eb1-e0368c67ea02\",\n\t\"text\": \"ela roda a cidade inteira pra ficar comigo\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"user_id\": \"b579ce14-c8b5-4ce7-9eb1-e0368c67ea02\",\n\t\"text\": \"ela roda a cidade inteira pra ficar comigo\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
+				{
+					"name": "get messages",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/messages?user_id=b579ce14-c8b5-4ce7-9eb1-e0368c67ea02",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "b579ce14-c8b5-4ce7-9eb1-e0368c67ea02",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "get messages",
-			"request": {
-				"url": {
-					"raw": "localhost:3000/messages?user_id=b579ce14-c8b5-4ce7-9eb1-e0368c67ea02",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"messages"
-					],
-					"query": [
-						{
-							"key": "user_id",
-							"value": "b579ce14-c8b5-4ce7-9eb1-e0368c67ea02",
-							"equals": true,
-							"description": ""
-						}
-					],
-					"variable": []
-				},
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
+			"name": "Crons",
+			"description": "",
+			"item": [
+				{
+					"name": "create crons",
+					"request": {
+						"url": "localhost:3000/crons",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"CRON_EVERY_SECOND\",\n\t\"value\": \"* * * * * *\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
