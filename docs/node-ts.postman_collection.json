@@ -1,0 +1,157 @@
+{
+	"variables": [],
+	"info": {
+		"name": "node-ts",
+		"_postman_id": "8159adaa-cc50-db70-60ae-fd482b17690e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Settings",
+			"description": "",
+			"item": [
+				{
+					"name": "create settings",
+					"request": {
+						"url": "localhost:3000/settings",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"chat\": true,\n\t\"username\": \"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "show setting",
+					"request": {
+						"url": "localhost:3000/settings/admin",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"chat\": true,\n\t\"username\": \"ivoneijr\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update settings",
+					"request": {
+						"url": "localhost:3000/settings/admin",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"chat\": true,\n\t\"username\": \"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "create users",
+					"request": {
+						"url": "localhost:3000/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"ivoneijr@gmail.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "create messages",
+			"request": {
+				"url": "localhost:3000/messages",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\": \"b579ce14-c8b5-4ce7-9eb1-e0368c67ea02\",\n\t\"text\": \"ela roda a cidade inteira pra ficar comigo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get messages",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/messages?user_id=b579ce14-c8b5-4ce7-9eb1-e0368c67ea02",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "b579ce14-c8b5-4ce7-9eb1-e0368c67ea02",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

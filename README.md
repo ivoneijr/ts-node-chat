@@ -30,7 +30,6 @@ This example is an implementation of an api with websockets in order to maintain
 
 ```sh
 [ ] Add api documentation (redoc)
-[ ] Add Postman collection example
 [ ] Add custom error handlers
 [ ] Add logger service with external transporter
 [ ] Add workers logic
@@ -49,7 +48,7 @@ Run the server running `yarn dev`
 
 To run this project you should have a postgres db created named as `nodets` and than run `yarn typeorm migration:run` to start db.
 
-To run the application through static `/public` files, you need to have data in `settings` table, you can do it calling HTTP POST to route `/settings` or insert directly to db. (username column need to be `admin`)
+To run the application through static `/public` files, you need to have data in `settings` table, you can do it calling HTTP POST to route `/settings` (available on `docs/node-ts.postman_collecion.json`) or insert directly to db. (username column need to be `admin`)
 
 To access the application as a client access `http://localhost:3000/pages/client`
 
