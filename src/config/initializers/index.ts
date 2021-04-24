@@ -13,7 +13,7 @@ import useRoutes from './routes'
 
 dotenv.config({ path: '.env' })
 
-const init = (app: express.Application): http.Server => {
+const init = (app?: express.Application): http.Server => {
   app.use(cors())
   app.use(helmet())
   app.use(compression())
