@@ -36,7 +36,6 @@ This example is an implementation of an api with websockets in order to maintain
 [ ] Add workers logic
 [ ] Add pm2
 [ ] Add test env
-[ ] Add checkenv lib
 [ ] Add db seeds
 [ ] Extract typeorm configurations to .env
 ```
