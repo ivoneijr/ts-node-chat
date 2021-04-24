@@ -5,7 +5,7 @@ import { Schema } from './schema'
 const router = Router()
 const usersController = new UsersController()
 
-/** @summary GET /users */
+/** @summary POST /users */
 router.post('/', Schema.create, usersController.create)
 
 export { router }

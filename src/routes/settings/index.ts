@@ -5,10 +5,10 @@ import { Schema } from './schema'
 const router = Router()
 const messagesController = new SettingsController()
 
-/** @summary POST /settings/:username */
+/** @summary GET /settings/:username */
 router.get('/:username', Schema.show, messagesController.show)
 
-/** @summary POST /settings/:username */
+/** @summary PATCH /settings/:username */
 router.patch('/:username', Schema.patch, messagesController.update)
 
 /** @summary POST /settings */
