@@ -41,7 +41,14 @@ To have a better development experience, I recommend using vscode with the `esli
 
 ### API
 
-To run this project you should have a postgres db created named as `nodets`, run `yarn typeorm migration:run` and `yarn typeorm:seed` to start db, and then run `yarn dev`.
+To run this project you should have a postgres db created named as `nodets`.
+Run:
+
+```sh
+  yarn typeorm migration:run // start db schema
+  yarn typeorm:seed          // run initial db data
+  yarn dev                   // run application
+```
 
 ### Client
 
