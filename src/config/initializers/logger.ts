@@ -40,6 +40,9 @@ const getTransports = async () => {
     )
   }
 
+  /**
+   * transporter example code
+   */
   // transports.push(
   //   new Loggly({
   //     token: LOGGLY_TOKEN,
