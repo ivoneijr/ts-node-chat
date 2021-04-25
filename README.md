@@ -1,6 +1,6 @@
 # WIP: Node Typscript boilerplate
 
-This is a personal project used as an example for projects using node and typescript.
+This is a personal project used as an example for node and typescript projects.
 
 This example is an implementation of an api with websockets in order to maintain the sync of a chat.
 
