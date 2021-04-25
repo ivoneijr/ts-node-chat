@@ -3,17 +3,21 @@ import cors from 'cors'
 import compression from 'compression'
 import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
-import * as http from 'http'
 import express from 'express'
-import useStatic from './static'
 
 import socket from './socket'
 import '../../database'
+import useStatic from './static'
 import useRoutes from './routes'
+import useLogger from './logger'
 
 dotenv.config({ path: '.env' })
 
-const init = (app?: express.Application): http.Server => {
+const init = (app?: express.Application): any => {
+  if (!app) {
+    return useLogger()
+  }
+
   app.use(cors())
   app.use(helmet())
   app.use(compression())
@@ -21,10 +25,9 @@ const init = (app?: express.Application): http.Server => {
 
   useStatic(app)
   useRoutes(app)
+  useLogger()
 
   // TODO: Add express logger
-  // TODO: Add error handler
-  // TODO: Add Logger init
 
   const server = socket(app)
 

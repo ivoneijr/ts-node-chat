@@ -1,5 +1,6 @@
 import { Server } from 'socket.io'
 import { Handler } from './Handler'
+import { Logger } from '../../helpers/Logger'
 
 class Listener {
   private io: Server
@@ -12,7 +13,7 @@ class Listener {
     try {
       handler.handle(this.io.of(namespace))
     } catch (err) {
-      console.log(`listen function not found for ${namespace} namespace`)
+      Logger.error(`listen function not found for ${namespace} namespace`)
     }
   }
 }

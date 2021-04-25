@@ -1,3 +1,5 @@
+import { Logger } from '../../helpers/Logger'
+
 export default (): void => {
-  console.log('WORKER SAMPLE')
+  Logger.info('WORKER SAMPLE')
 }

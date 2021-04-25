@@ -31,32 +31,24 @@ This example is an implementation of an api with websockets in order to maintain
 ```sh
 [ ] Add api documentation (redoc)
 [ ] Add custom error handlers
-[ ] Add logger service with external transporter
 [ ] Add pm2
 [ ] Add test env
 ```
 
-## Dev env
-
-To have a better development experience, I recommend using vscode with the `eslint` and `prettier` plugins installed.
-Run the server running `yarn dev`
-
 ## Running Instructions
 
-To run this project you should have a postgres db created named as `nodets` and than run `yarn typeorm migration:run` to start db.
+To have a better development experience, I recommend using vscode with the `eslint` and `prettier` plugins installed.
 
-To run the application through static `/public` files, you need to have data in `settings` table, you can do it calling HTTP POST to route `/settings` (available on `docs/node-ts.postman_collecion.json`) or insert directly to db. (username column need to be `admin`)
+### API
+
+To run this project you should have a postgres db created named as `nodets`, run `yarn typeorm migration:run` and `yarn typeorm:seed` to start db, and then run `yarn dev`.
+
+### Client
 
 To access the application as a client access `http://localhost:3000/pages/client`
 
 To access the application as a client access `http://localhost:3000/pages/admin`
 
-### Utility scripts
-
-```sh
-yarn typeorm {command}                            // typeorm cli
-yarn typeorm migration:create -n {MigrationName}  // generate new db migration file
-yarn typeorm migration:run                        // run latest db migration
-```
-
 PS: Don't care about code inside `/public`, it's just a functional socket.io examples, this project is focused on the backend.
+
+### Have fun (=

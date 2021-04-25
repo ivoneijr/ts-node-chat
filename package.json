@@ -28,12 +28,15 @@
     "socket.io": "^4.0.1",
     "socket.io-client": "^4.0.1",
     "typeorm": "^0.2.32",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3",
+    "winston-loggly-bulk": "^3.2.1"
   },
   "devDependencies": {
     "@types/cron": "^1.7.2",
     "@types/joi": "^17.2.3",
     "@types/socket.io": "^2.1.13",
+    "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb-typescript": "^12.3.1",

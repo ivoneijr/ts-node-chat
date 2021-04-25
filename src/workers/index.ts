@@ -4,6 +4,8 @@ import cron from 'node-cron'
 import { CronsService } from '../services/crons'
 import sample from './sample'
 import { Cron } from '../entities/Cron'
+import init from '../config/initializers'
+import { Logger } from '../helpers/Logger'
 
 interface IWorkers {
   cron?: Cron
@@ -27,6 +29,8 @@ const getWorkers = async (): Promise<IWorkers[]> => {
 
 const run = async () => {
   try {
+    init()
+
     const success = await createConnection()
     const workers = success ? await getWorkers() : []
 
@@ -34,7 +38,7 @@ const run = async () => {
       worker.cron ? cron.schedule(worker.cron.value, worker.run) : null
     )
   } catch (error) {
-    console.log(`[error] running workers ${error}`)
+    Logger.error(`running workers : ${error}`)
   }
 }
 

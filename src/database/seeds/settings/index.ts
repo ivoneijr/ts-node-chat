@@ -1,14 +1,12 @@
 import { SettingsService } from '../../../services/settings'
+import { Logger } from '../../../helpers/Logger'
 
 export default (): void => {
   try {
-    console.log('[DB:SEED] INIT SETTINGS SEED')
     const settingsService = new SettingsService()
 
     settingsService.create({ chat: true, username: 'admin' })
-
-    console.log('[DB:SEED] SETTINGS SEED SUCCESS')
   } catch (error) {
-    console.log('[DB:SEED] SETTINGS SEED ERROR: ', error)
+    Logger.error(`[DB:SEED] CRONS SEED ERROR: ${error}`)
   }
 }

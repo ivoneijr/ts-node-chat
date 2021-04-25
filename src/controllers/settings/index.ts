@@ -37,7 +37,6 @@ class SettingsController {
 
       res.status(200).send(setting)
     } catch (error) {
-      console.log('error: ', error)
       res.status(400).send({ message: error.detail || error.message })
     }
   }
