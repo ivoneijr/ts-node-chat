@@ -7,7 +7,8 @@
     "build": "tsc",
     "dev": "ts-node-dev --ignore-watch node_modules src/index.ts",
     "dev:worker": "ts-node-dev --ignore-watch node_modules src/workers/index.ts",
-    "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
+    "typeorm:seed": "ts-node-dev --ignore-watch node_modules src/database/seeds/index.ts"
   },
   "dependencies": {
     "@types/express": "^4.17.11",

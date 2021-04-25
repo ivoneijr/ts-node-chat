@@ -34,7 +34,6 @@ This example is an implementation of an api with websockets in order to maintain
 [ ] Add logger service with external transporter
 [ ] Add pm2
 [ ] Add test env
-[ ] Add db seeds
 ```
 
 ## Dev env
