@@ -48,17 +48,13 @@ Run:
   yarn typeorm migration:run // start db schema
   yarn typeorm:seed          // run initial db data
   yarn dev                   // run application
+  yarn dev:worker            // run workers
+  yarn docs:build            // build new docs based on public/docs/redoc/index.yml path
 ```
-
-### Workers
-
-To execute workers run `yarn dev:worker`
 
 ### Documentation
 
 You can access the api docs on `http://localhost:3000/docs`
-
-To build a new version of documentation, you should have to change `public/docs/redoc/index.yml` path and run `yarn docs:build`
 
 ### Websockets Preview
 
