@@ -50,11 +50,15 @@ Run:
   yarn dev                   // run application
 ```
 
-### Client
+### Documentation
 
-To access the application as a client access `http://localhost:3000/pages/client`
+You can access the api docs on `http://localhost:3000/docs`
 
-To access the application as a admin access `http://localhost:3000/pages/admin`
+### Websockets Preview
+
+To access the application as a client access `http://localhost:3000/preview/client`
+
+To access the application as a admin access `http://localhost:3000/preview/admin`
 
 PS: Don't care about code inside `/public`, it's just a functional socket.io examples, this project is focused on the backend.
 
