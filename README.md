@@ -50,6 +50,10 @@ Run:
   yarn dev                   // run application
 ```
 
+### Workers
+
+To execute workers run `yarn dev:worker`
+
 ### Documentation
 
 You can access the api docs on `http://localhost:3000/docs`
