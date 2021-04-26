@@ -1,0 +1,84 @@
+################################# List single-profiles #################################
+get:
+  tags:
+    - single profiles
+  summary: Listagem de perfís únicos
+  description: Retorna perfís únicos de uma audiência.
+  operationId: listSingleProfiles
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: query
+      name: search
+      description:
+        "Parâmetro opcional em formato string com dado que o cliente deseja filtrar.
+
+
+        Dados que podem ser utilizados na pesquisa: **(e-mail, nome, telefone e cpf)**.
+
+
+        Neste exemplo a seguir é utilizado como filtro um e-mail
+
+
+        `/v2/single-profiles?search=user123@gmail.com`
+
+
+        Você solicita todos os perfís únicos que contenham user123@gmail.com como e-mail."
+
+      required: false
+      type: string
+
+    - in: query
+      name: limit
+      description: limite de registros de perfís únicos a serem retornados.
+      required: false
+      type: number
+      default: 100
+      minimum: 1
+      maximum: 100
+
+    - in: query
+      name: offset
+      description: Subset ou página a ser retornada.
+      required: false
+      type: number
+      default: 0
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./list/response/200.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./list/response/422.yml"
+
+  x-code-samples:
+    $ref: "./list/x-code-samples.yml"

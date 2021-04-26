@@ -1,0 +1,76 @@
+#status
+"/status":
+  $ref: "./status/index.yml"
+
+#users
+"/users":
+  $ref: "./users/create/index.yml"
+
+#activities
+"/activities":
+  $ref: "./activities/root/index.yml"
+
+#audience-imports
+"/audience-imports/":
+  $ref: "./audience-imports/list/index.yml"
+"/audience-imports/{id}":
+  $ref: "./audience-imports/show/index.yml"
+
+#activity-actions
+"/activity-actions/batch":
+  $ref: "./activity-actions/batch/index.yml"
+"/activity-actions/":
+  $ref: "./activity-actions/root/index.yml"
+"/activity-actions/{id}":
+  $ref: "./activity-actions/show/index.yml"
+
+#activity-dimensions
+"/activity-dimensions/batch":
+  $ref: "./activity-dimensions/batch/index.yml"
+"/activity-dimensions/":
+  $ref: "./activity-dimensions/root/index.yml"
+"/activity-dimensions/{id}":
+  $ref: "./activity-dimensions/show/index.yml"
+
+#activity-templates
+# "/activity-templates/":
+#   $ref: "./activity-templates/root/index.yml"
+# "/activity-templates/{id}":
+#   $ref: "./activity-templates/show/index.yml"
+# "/activity-templates/{id}/variables":
+#   $ref: "./activity-templates/variables/index.yml"
+
+#subscription
+"/subscriptions/one-signal":
+  $ref: "./subscriptions/one-signal/root/index.yml"
+
+#ultrasegmentation
+"/ultra-segmentations/":
+  $ref: "./ultra-segmentations/root/index.yml"
+"/ultra-segmentations/{id}":
+  $ref: "./ultra-segmentations/show/index.yml"
+"/ultra-segmentations/{id}/single-profiles":
+  $ref: "./ultra-segmentations/single-profiles/index.yml"
+
+#variables
+"/variables":
+  $ref: "./variables/root/index.yml"
+"/variables/batch":
+  $ref: "./variables/batch/index.yml"
+"/variables/{id}":
+  $ref: "./variables/resource/index.yml"
+
+#singleProfiles
+"/single-profiles":
+  $ref: "./single-profiles/root/index.yml"
+"/single-profiles/batch":
+  $ref: "./single-profiles/batch/index.yml"
+"/single-profiles/{id}":
+  $ref: "./single-profiles/resource/index.yml"
+
+#schemas
+"/schemas/validate-users":
+  $ref: "./schemas/validate-users/index.yml"
+
+"/schemas/validate-activities":
+  $ref: "./schemas/validate-activities/index.yml"

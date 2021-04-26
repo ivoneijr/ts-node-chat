@@ -1,0 +1,22 @@
+- lang: CURL
+  source: |
+    curl -X GET \
+    'https://bulk.beta.api.4all.com/v2/single-profiles/68a81cb8-14de-11e9-88dd-15998c48f0b9' \
+    -H 'Content-Type: application/json' \
+    -H 'x-api-key: f3o4mc-3-kck34-f394'
+
+- lang: NodejS Request
+  source: |
+    var request = require("request");
+
+    var options = { method: 'GET',
+      url: 'https://bulk.beta.api.4all.com/v2/single-profiles/68a81cb8-14de-11e9-88dd-15998c48f0b9',
+      headers:
+      { 'x-api-key': 'f3o4mc-3-kck34-f394',
+        'Content-Type': 'application/json' } };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      console.log(body);
+    });

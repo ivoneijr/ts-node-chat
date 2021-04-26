@@ -1,0 +1,18 @@
+type: object
+description: Retorna successo da requisição e possível mensagem de erro.
+required:
+  - success
+  - message
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: false
+  message:
+    type: String
+    description: Mensagem de erro.
+    example: "Erro ao buscar template."
+  'type':
+    type: String
+    description: Tipo de erro.
+    example: "ACTIVITY_TEMPLATE_SHOW_ERROR"

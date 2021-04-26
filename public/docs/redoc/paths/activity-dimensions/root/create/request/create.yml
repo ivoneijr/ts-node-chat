@@ -1,0 +1,13 @@
+type: object
+required:
+  - nm_activity_dimension
+  - is_active
+properties:
+  nm_activity_dimension:
+    type: String
+    description: Nome da dimensão de atividade
+    example: "Aquele nome que você respeita"
+  is_active:
+    type: boolean
+    description: Flag sinalizando se dimensão está ativa ou não.
+    example: true

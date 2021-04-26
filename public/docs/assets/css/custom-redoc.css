@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+[sticky-sidebar][_ngcontent-c0] {
+  background: -o-linear-gradient(to top, #5b7288, #7c94aa);
+  background: -moz-linear-gradient(to top, #5b7288, #7c94aa);
+  background: linear-gradient(to top, #5b7288, #7c94aa);
+}
+[_nghost-c0] .menu-item-header > .operation-type.put {
+  background-position: 8px -28px;
+  background-color: #9b708b;
+}
+[_nghost-c0] a {
+  text-decoration: none;
+  color: #0168cb;
+}
+[_nghost-c0] h1 {
+  color: #0168cb !important;
+}
+[_nghost-c0] h2 {
+  color: #0168cb !important;
+}
+[_nghost-c0] h3 {
+  color: #0168cb !important;
+}
+[_nghost-c0] h4 {
+  color: #0168cb !important;
+}
+.menu-item-header[_ngcontent-c8] {
+  color: white !important;
+}
+input[_ngcontent-c3] {
+  color: white !important;
+}
+[_nghost-c2] {
+  margin-top: 20px;
+}
+.menu-item-depth-1.active[_ngcontent-c8] > .menu-item-header[_ngcontent-c8] {
+  color: #0168cb !important;
+  background: white !important;
+}
+.menu-item-depth-1[_ngcontent-c8]
+  > .menu-item-header[_ngcontent-c8]:not(.disabled):hover,
+.menu-item-depth-1.active[_ngcontent-c8] > .menu-item-header[_ngcontent-c8] {
+  color: #0168cb !important;
+  background: white !important;
+}
+.menu-item-depth-2[_ngcontent-c8] > .menu-item-header[_ngcontent-c8]:hover,
+.menu-item-depth-2.active[_ngcontent-c8] > .menu-item-header[_ngcontent-c8] {
+  color: #0168cb !important;
+  background: white !important;
+}
+.server-item[_ngcontent-c10] > .url[_ngcontent-c10] {
+  color: #0168cb !important;
+}
+.openapi-button[_ngcontent-c6] {
+  color: #0168cb !important;
+  border: 1px solid #0168cb !important;
+}
+
+.param-name[_ngcontent-c20] > span[_ngcontent-c20]::before {
+  background-color: #0168cb;
+}
+.param-name[_ngcontent-c20] > span[_ngcontent-c20]::after {
+  border-top: 1px solid #0168cb;
+}
+
+.search-input-wrap > svg path {
+  fill: white !important;
+}
+input[placeholder],
+[placeholder],
+*[placeholder] {
+  color: white !important;
+}
+.search-results {
+  background-color: white !important;
+}
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: white;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.menu-item-title {
+  font-size: 1.05em;
+}
+.selected-item-info {
+  color: white !important;
+}

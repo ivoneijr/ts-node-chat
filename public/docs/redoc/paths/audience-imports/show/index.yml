@@ -1,0 +1,40 @@
+get:
+  tags:
+    - audience imports
+  summary: Retorna detalhes de uma importação.
+  description: Detalhes de uma importação
+  operationId: showAudienceImports
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./response/showAudienceImports_200.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./response/showAudienceImports_422.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"

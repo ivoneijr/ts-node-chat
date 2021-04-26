@@ -1,0 +1,82 @@
+type: object
+description: Retorna success ou error
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    description: Dados de retorno
+    required:
+      - sent
+      - repeated
+      - passed
+      - error
+      - errors
+      - updated
+    properties:
+      sent:
+        type: integer
+        description: Total de variáveis enviadas.
+        example: 5
+      repeated:
+        type: integer
+        description:
+          Total de variáveis enviadas que estão repetidas no momento do envio. (só será utilizado uma).
+
+          Validação é feita pelo campo `ds_variable`.
+        example: 1
+      passed:
+        type: integer
+        description: Total de variáveis que foram atualizadas.
+        example: 1
+      error:
+        type: integer
+        description: Total de erros que ocorreram.
+        example: 3
+      errors:
+        type: array
+        description: Lista de erros.
+        items:
+          type: object
+          properties:
+            id_error:
+              type: string
+              description: Algum erro interno ocorreu, entrar em contato informando `id_error` gerado para que seja possível analisar.
+            error:
+              type: object
+              description: Dados do erro.
+        example:
+          - id_error: 8a49850b-50b4-4b88-9d5e-b088dd4409d1
+          - message: Nome de variável já cadastrado.
+            type: VARIABLES_NAME_ALREADY_REGISTERED_ERROR.
+            data:
+              ds_variable: Loja mais frequentada
+              id: 9e392ce6-f0a8-45d4-b5ec-2e2e1ea033d6
+              links:
+                self: /v2/variables/9e392ce6-f0a8-45d4-b5ec-2e2e1ea033d6
+          - message: Variável não encontrada.
+            type: VARIABLE_NOT_FOUND_ERROR.
+            data:
+              id: a1cd78f3-dbca-4c04-825f-bcd2d085128f
+      updated:
+        type: array
+        description: Lista de variáveis atualizadas.
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              example: 9e392ce6-f0a8-45d4-b5ec-2e2e1ea033d6
+              description: id da variável
+            links:
+              type: object
+              properties:
+                self:
+                  type: string
+                  example: /v2/variables/9e392ce6-f0a8-45d4-b5ec-2e2e1ea033d6
+                  description: URL para acessar o resource.

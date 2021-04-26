@@ -1,0 +1,41 @@
+type: object
+description: Retorna success e erro.
+required:
+  - success
+  - messages
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  messages:
+    type: array
+    description: Array de mensagens de erro.
+    items:
+      type: object
+      properties:
+        message:
+          type: String
+          description: Mensagem de erro
+          example: "\"is_active\" is required"
+        path:
+          type: array
+          description: path de erro
+          items:
+            type: String
+            example:  ["body", "is_active"]
+        'type':
+          type: String
+          description: Tipo de erro
+          example: "any.required"
+        context:
+          type: object
+          description: Informações de contexto do erro.
+          properties:
+            key:
+              type: String
+              example: is_active
+            label:
+              type: String
+              example: is_active
+

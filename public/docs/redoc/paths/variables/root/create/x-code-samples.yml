@@ -1,0 +1,45 @@
+# CURL
+- lang: CURL
+  source: |
+    curl -X POST \
+    'https://bulk.beta.api.4all.com/v2/variables?show_ids=true' \
+    -H 'Content-Type: application/json' \
+    -H 'x-api-key: f3o4mc-3-kck34-f394' \
+    -d {
+        "ds_variable": "Pagamento Preferencial 45454d3sfsfdff",
+        "cd_dimension": "behavior",
+        "cd_variable_type": "string",
+        "cd_group": "expenses",
+        "is_segmentable_value": true,
+        "is_segmentable_key": false,
+        "is_multivalued": false,
+        "nr_order": 4
+      }
+# NODE
+- lang: NodejS Request
+  source: |
+    var request = require("request");
+
+    var options = { method: 'POST',
+      url: 'https://bulk.beta.api.4all.com/v2/variables',
+      qs: { "show_ids": true },
+      headers:
+      { 'x-api-key': 'f3o4mc-3-kck34-f394',
+        'Content-Type': 'application/json' },
+        body: {
+          "ds_variable": "Pagamento Preferencial 45454d3sfsfdff",
+          "cd_dimension": "behavior",
+          "cd_variable_type": "string",
+          "cd_group": "expenses",
+          "is_segmentable_value": true,
+          "is_segmentable_key": false,
+          "is_multivalued": false,
+          "nr_order": 4
+        }
+      };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      console.log(body);
+    });

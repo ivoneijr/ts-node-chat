@@ -1,0 +1,68 @@
+type: object
+description: Retorna alguns meta dados levados em consideração na consulta e o resultado.
+required:
+  - success
+  - total
+  - limit
+  - offset
+  - status
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  total:
+    type: Number
+    description: Total de registros.
+    example: 100000
+  limit:
+    type: Number
+    description: Limite de objetos para executar consulta.
+    example: 10
+  offset:
+    type: Number
+    description: Página utilizada para executar consulta.
+    example: 0
+  status:
+    type: Number
+    description: Status considerados para executar consulta.
+    example:  [100, 900]
+  data:
+    type: array
+    description: Resultado da consulta de listagem de importações.
+    items:
+      type: object
+      properties:
+        id_audience_import:
+          type: string
+          description: Id da importação.
+          example: "5ec03657-da9a-4f9e-9542-0fa0990fdab6"
+        nm_audience_import:
+          type: string
+          description: Nome da importação.
+          example: "Importação [2019-02-06 13:15:32]"
+        cd_import_status:
+          type: string
+          description: Código de status de importação.
+          example:  100
+        ds_status:
+          type: string
+          description: Descrição de status de importação.
+          example: "Upload Concluído"
+        ts_ingested_at:
+          type: string
+          description: Data de ingestão de importação.
+          example: "2019-02-06 13:15:32"
+        ts_imported_at:
+          type: string
+          description: Data de importação.
+          example: "2019-02-06 13:15:32"
+        ts_created_at:
+          type: string
+          description: Data de criação de importação.
+          example: "2019-02-06 13:15:32"
+        ts_updated_at:
+          type: string
+          description: Data de atualização de importação.
+          example: "2019-02-06 13:15:33"

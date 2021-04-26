@@ -1,0 +1,79 @@
+swagger: '2.0'
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+basePath: /
+info:
+  version: 2.0
+  title: TSNode sample api
+  x-logo:
+    url: '../docs/assets/img/logo.png'
+
+tags:
+  # GERAL
+  - name: Intro
+    description:
+      $ref: './menu-description/intro.yml'
+
+  #ROTAS
+  - name: status
+    description: API Status route.
+
+  - name: users
+    description: Users routes.
+
+  # - name: activities
+  #   description: Rotas disponíveis para integração com atividades.
+
+  # - name: audience imports
+  #   description: 'Rotas disponíveis para integração com importações.
+
+  #     Processos que criam uma importação:
+
+  #     `Criação de usuários`
+
+  #     `Criação de atividades`'
+
+  # - name: activity actions
+  #   description: Rotas disponíveis para integração com ações de atividade.
+
+  # - name: activity dimensions
+  #   description: Rotas disponíveis para integração com dimensões de atividade.
+
+  # - name: ultra segmentations
+  #   description: Rotas disponíveis para integração com ultra segmentações.
+
+  # - name: subscriptions
+  #   description: Rotas disponíveis *subscription*
+
+  # - name: variables
+  #   description: Rotas disponíveis para integração variáveis.
+
+  # - name: single profiles
+  #   description: Rotas disponíveis para integração com perfís únicos.
+
+  # - name: 'schemas'
+  # description: Rotas disponíveis para validação de schemas.
+
+x-tagGroups:
+  - name: GENERAL
+    tags:
+      - Intro
+  - name: Rotas
+    tags:
+      - status
+      - users
+      # - activities
+      # - audience imports
+      # - activity actions
+      # - activity dimensions
+      # - subscriptions
+      # - ultra segmentations
+      # - variables
+      # - single profiles
+      # - 'schemas'
+paths:
+  $ref: './paths/index.yml'

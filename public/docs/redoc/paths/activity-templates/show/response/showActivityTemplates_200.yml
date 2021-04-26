@@ -1,0 +1,37 @@
+type: object
+description: Retorna sucesso da requisição.
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    properties:
+      id_activity_template:
+        type: string
+        description: Id do template
+        example: "4eb3d190-febe-4b93-94c6-06a4023306a2"
+      nm_activity_template:
+        type: string
+        description: Nome do template
+        example: "ac1"
+      ds_activity_template:
+        type: string
+        description: Descrição do template.
+        example: "ac1"
+      is_active:
+        type: number
+        description: Flag para sinalizar se o template está ativo.
+        example: 1
+      ts_created_at:
+        type: string
+        description: Timestamp de criação de dimensão.
+        example: "2019-02-21 20:18:27"
+      ts_updated_at:
+        type: string
+        description: Timestamp de atualização de dimensão.
+        example: "2019-02-21 20:18:27"

@@ -1,0 +1,480 @@
+type: object
+description: Retorna sucesso da requisição.
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Identificador do perfil único.
+        example: 9abd5fa3-264c-11e9-9811-e139dabc2a5c
+      id_audience:
+        type: string
+        description: Identificador da audiência.
+        example: 99999999-796a-11e8-ac12-0a0f862da7d4
+      activities_payment:
+        type: array
+        description: Array de objetos atividades de pagamento.
+        items:
+          type: object
+          properties:
+            cd_activity_category:
+              type: string
+              description: Código da categoria da atividade.
+              example: "financial"
+            ds_activity_category:
+              type: string
+              description: Descrição da categoria da atividade.
+              example: "Finanças"
+            cd_activity_type:
+              type: string
+              description: Código do tipo da atividade.
+              example: "1"
+            ts_registered_at:
+              type: string
+              description: Timestamp de quando dado foi registrado.
+              example: "2018-11-20T20:20:46.391622"
+            ds_activity_action:
+              type: string
+              description: Descrição da ação da atividade.
+              example: "Pagamento"
+            cd_activity_action:
+              type: string
+              description: Código da ação da atividade.
+              example: "pay"
+            ds_activity_type:
+              type: string
+              description: Descrição do tipo da atividade.
+              example: "Cartão Crédito"
+
+      addresses:
+        type: array
+        description: Array de objetos endereços cadastrado.
+        items:
+          type: object
+          properties:
+            ds_complement:
+              type: string
+              description: Complemento do endereço.
+              example: "301"
+            is_active:
+              type: boolean
+              description: Flag sinalizando se endereço está ativo ou não.
+              example: true
+            nm_neighborhood:
+              type: string
+              description: Bairro do endereço.
+              example: "Moinhos de Vento"
+            nr_zipcode:
+              type: string
+              description: CEP do endereço.
+              example: "90540001"
+            nr_street:
+              type: string
+              description: Número do endereço.
+              example: "21345"
+            nm_street:
+              type: string
+              description: Nome da rua.
+              example: "Rua Marquês do Pombal"
+            nm_country:
+              type: string
+              description: Nome do país.
+              example: "Brasil"
+            nr_country_iso:
+              type: string
+              description: Código ISO do país.
+              example: "076"
+            cd_state:
+              type: string
+              description: Código do estado.
+              example: "RS"
+            cd_country_iso:
+              type: string
+              description: Código ISO do país.
+              example: "BRA"
+            nm_city:
+              type: string
+              description: Nome da cidade.
+              example: "Porto Alegre"
+            nm_state:
+              type: string
+              description: Nome do estado.
+              example: "Rio Grande do Sul"
+      real_time_geofences:
+        type: array
+        description: Array de UUID's de pontos geográficos.
+        items:
+          type: string
+          description: Identificador de um ponto geográfico.
+          example: e906b35a319146868d911f10721a700a
+      cards:
+        type: array
+        description: Array de objetos cartões cadastrados.
+        items:
+          type: object
+          properties:
+            nr_last_digits:
+              type: string
+              description: Número dos últimos 4 dígitos
+              example: "1234"
+            id_card_4all:
+              type: numeric
+              description: Identificador do cartão.
+              example: 252487
+            cd_brand:
+              type: string
+              description: Código identificador da bandeira.
+              example: "2"
+            cd_card_type:
+              type: string
+              description: Código identificador do tipo de cartão.
+              example: "3"
+            cd_source_sytem:
+              type: string
+              description: Código identificador da origem do dado.
+              example: "fintech_4all"
+            nm_brand:
+              type: string
+              description: Nome da marca do cartão.
+              example: "MASTERCARD"
+            dt_expiration:
+              type: string
+              description: Data de expiração do cartão.
+              example: "2027-01-04T23:59:59"
+      education:
+        type: array
+        description: Array de objetos educação cadastrados.
+        items:
+          type: object
+          properties:
+            nm_institution:
+              type: string
+              description: Nome da instituição.
+              example: "Universidade Federal do Rio Grande do Sul"
+            dt_study_end:
+              type: string
+              description: Data final do estudo.
+              example: "1996-01-01T00:00:00"
+            nr_order:
+              type: integer
+              description: Número de ordenação, utilizado para dar prefência em listagens de dados que utilizam.
+              example: 3
+            cd_source_sytem:
+              type: string
+              description: Código identificador da origem do dado.
+              example: "etl/fullcontact"
+            dt_study_start:
+              type: string
+              description: Data de início dos estudos.
+              example: "1991-01-01T00:00:00"
+            ds_education_degree:
+              type: string
+              description: Grau de educação.
+              example: "Administração de Empresas"
+      keywords:
+        type: array
+        description: Array de objetos palavras chave.
+        items:
+          type: object
+          properties:
+            nr_order:
+              type: integer
+              description: Número de ordenação, utilizado para dar prefência em listagens de dados que utilizam.
+              example: 1
+            cd_source_sytem:
+              type: string
+              description: Código identificador da origem do dado.
+              example: "etl/fullcontact"
+            ds_keyword:
+              type: string
+              description: Palavra chave.
+              example: "Porto Alegre"
+      is_bounce:
+        type: boolean
+        description: Flag sinalizando se e-mail do usuário é valido.
+        example: false
+      employment:
+        type: array
+        description: Array de objetos empregos cadastrados.
+        items:
+          type: object
+          properties:
+            ds_ocupation_title:
+              type: string
+              description: Título da ocupação.
+              example: "Redator Junior"
+            is_current_employment:
+              type: boolean
+              description: Flag sinalizando se é emprego atual.
+              example: false
+            nm_company:
+              type: string
+              description: Nome da empresa.
+              example: "ESCALA"
+            nr_order:
+              type: integer
+              description: Número de ordenação, utilizado para dar prefência em listagens de dados que utilizam.
+              example: 7
+            cd_source_sytem:
+              type: string
+              description: Código identificador da origem do dado.
+              example: "etl/fullcontact"
+            dt_ocupation_start:
+              type: string
+              description: Data inicial do emprego.
+              example: "2014-01-01T00:00:00"
+            dt_ocupation_end:
+              type: string
+              description: Data final do emprego.
+              example: "2016-01-01T00:00:00"
+      nr_phone:
+        type: string
+        description: Número do telefone.
+        example: "5551999999999"
+      ds_email:
+        type: string
+        description: E-mail do usuário.
+        example: "user123@gmail.com"
+      users:
+        type: array
+        description: Array de objetos usuário.
+        items:
+          type: object
+          properties:
+            nm_user:
+              type: string
+              description: Nome do usuário.
+              example: "Adolfo Da Rosa Matos"
+            is_sms_subscribed:
+              type: boolean
+              description: Flag sinalizando se está inscrito para receber notificações sms.
+              example: true
+            ts_created_at:
+              type: string
+              description: Data da criação.
+              example: "2018-09-14T13:05:33.935841"
+            is_push_subscribed:
+              type: boolean
+              description: Flag sinalizando se está inscrito para receber notificações push.
+              example: true
+            ts_updated_at:
+              type: string
+              description: Data de atualização.
+              example: "2018-09-14T13:05:33.935841"
+            id_user:
+              type: string
+              description: Identificador do usuário.
+              example: eddf35fd-2fb8-11e9-ae5e-4118c73cee64
+            is_bounce:
+              type: boolean
+              description: Flag sinalizando se e-mail é valido.
+              example: false
+            nr_phone:
+              type: string
+              description: Número do telefone.
+              example: "5551999999999"
+            ds_email:
+              type: string
+              description: E-mail do usuário.
+              example: "user123@gmail.com"
+            is_email_subscribed:
+              type: boolean
+              description: Flag sinalizando se está inscrito para receber notificações e-mail.
+              example: true
+      nm_user:
+        type: string
+        description: Nome do usuário.
+        example: Adolfo Da Rosa Matos
+      is_sms_subscribed:
+        type: boolean
+        description: Flag sinalizando se está inscrito para receber notificações sms.
+        example: true
+      social_profile:
+        type: array
+        description: Array de objetos perfís sociais.
+        items:
+          type: object
+          properties:
+            nm_user:
+              type: string
+              description: Nome do usuário na rede social.
+              example: "adolforosa"
+            nr_order:
+              type: integer
+              description: Número de ordenação, utilizado para dar prefência em listagens de dados que utilizam.
+              example: 5
+            cd_social_network:
+              type: string
+              description: Nome da rede social.
+              example: "gravatar"
+            ds_url:
+              type: string
+              description: Url do perfil na rede social.
+              example: "https://gravatar.com/adolforosa"
+      is_push_subscribed:
+        type: boolean
+        description: Flag sinalizando se está inscrito para receber notificações push.
+        example: true
+      segmentations:
+        type: array
+        description: Array de UUID's de ultra segmentações em que perfíl único está vinculado.
+        items:
+          type: string
+          description: Identificador de uma ultra segmentação.
+          example: e906b35a319146868d911f10721a700a
+      websites:
+        type: array
+        description: Array de objetos sites do perfil único.
+        items:
+          type: object
+          properties:
+            cd_website_type:
+              type: string
+              description: Código do tipo de site.
+              example: "Other"
+            nr_order:
+              type: integer
+              description: Número de ordenação, utilizado para dar prefência em listagens de dados que utilizam.
+              example: 0
+            ds_url:
+              type: string
+              description: URL do site.
+              example: "https://example.com/"
+      interests:
+        type: array
+        description: Array de objetos interesses do perfil único.
+        items:
+          type: object
+          properties:
+            ds_interest:
+              type: string
+              description: Descrição do interesse.
+              example: "Apple"
+            nr_order:
+              type: integer
+              description: Número de ordenação, utilizado para dar prefência em listagens de dados que utilizam.
+              example: 3
+            cd_affinity_level:
+              type: string
+              description: Código do nível de afinidade.
+              example: "LOW"
+            cd_interest_type:
+              type: string
+              description: Código do tipo de interesse.
+              example: "brand"
+      is_email_subscribed:
+        type: boolean
+        description: Flag sinalizando se está inscrito para receber notificações e-mail.
+        example: true
+      last_payments:
+        type: array
+        description: Array de objetos últimos pagamentos do perfil único.
+        items:
+          type: object
+          properties:
+            ds_status_4all:
+              type: string
+              description: Status do pagamento.
+              example: "Pago"
+            card_cd_card_type:
+              type: string
+              description: Código do tipo de cartão utilizado.
+              example: "1"
+            nr_qt_installments:
+              type: numeric
+              description: Número de parcelas da compra.
+              example: 1
+            vl_total_amount:
+              type: numeric
+              description: Valor total da compra.
+              example: 201.6
+            id_merchant_4all:
+              type: integer
+              description: Identificador do comerciante na 4all.
+              example: 2459
+            card_nr_last_digits:
+              type: string
+              description: Número dos últimos 4 dígitos
+              example: "1234"
+            ts_requested_at:
+              type: string
+              description: Data que foi feita a requisição.
+              example: "2018-08-30T18:53:04"
+            ts_paid_at:
+              type: string
+              description: Data que foi feito o pagamento.
+              example: "2018-08-30T18:53:04"
+            nr_document:
+              type: string
+              description: Número do documento de pagamento.
+              example: "28269175000118"
+            id_payment_4all:
+              type: integer
+              description: Identificador do pagamento na 4all.
+              example: 46630221331
+            nm_category:
+              type: string
+              description: Nome da categoria.
+              example: "Ingressos"
+            card_dt_expiration:
+              type: string
+              description: Data da expiração do cartão.
+              example: "2026-05-04T23:59:59"
+            card_id_card_4all:
+              type: integer
+              description: Identificador do cartão na 4all.
+              example: 2233308
+            card_nm_brand:
+              type: string
+              description: Marca do cartão.
+              example: "VISA"
+            nm_establishment:
+              type: string
+              description: Nome do estabelecimento.
+              example: "Uhuu"
+            ds_payment_mode:
+              type: string
+              description: Modo de pagamento.
+              example: "Cartão Crédito"
+            cd_status_4all:
+              type: numeric
+              description: Código de status na 4all.
+              example: 3
+            vl_discount:
+              type: numeric
+              description: Valor de desconto.
+              example: 0
+            card_cd_brand:
+              type: string
+              description: Código da bandeira do cartão.
+              example: "1"
+      avatars:
+        type: array
+        description: Array de objetos avatar do perfil único.
+        items:
+          type: object
+          properties:
+            nr_order:
+              type: integer
+              description: Número de ordenação, utilizado para dar prefência em listagens de dados que utilizam.
+              example: 3
+            ds_url:
+              type: string
+              description: URL do avatar.
+              example: "https://instagram.fpoa4-1.fna.fbcdn.net/vp/02c5720823d9b177cfadb6c955cec0b8/5D0EECFE/t51.2885-19/s320x320/45857017_1190265724446100_2872107075364716544_n.jpg?_nc_ht=instagram.fpoa4-1.fna.fbcdn.net"
+            ds_label:
+              type: string
+              description: Label da origem do avatar.
+              example: "instagram"
+      id_one_signal:
+        type: string
+        description: Identificador do perfíl único no One Signal.
+        example: 87f87b1d-241d-429c-be6c-ee36d1226940

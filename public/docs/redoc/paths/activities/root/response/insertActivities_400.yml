@@ -1,0 +1,26 @@
+type: object
+description: Retorna success e o id do e-mail
+required:
+  - success
+  - messages
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  messages:
+    type: array
+    description: Array de mensagens de erro.
+    items:
+      type: object
+      properties:
+        message:
+          type: String
+          description: Mensagem de erro
+          example: "\"variables\" is required"
+        path:
+          type: array
+          description: path de erro
+          items:
+            type: String
+            example:  ["body", 0, "variables"]

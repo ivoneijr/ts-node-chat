@@ -1,0 +1,42 @@
+post:
+  tags:
+    - schemas
+  summary: Validação de schema de atividades
+  description: Verifica se os dados enviados estão com schema esperado.
+  operationId: schemaValidate
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+    - in: body
+      name: body
+      description: Array de objetos do tipo Atividades.
+      required: true
+      schema:
+        $ref: "../../activities/root/request/insertActivities.yml"
+  responses:
+    200:
+      description: OK.
+      schema:
+        $ref: "./response/schemaValidate_200.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"

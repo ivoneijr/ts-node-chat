@@ -1,0 +1,44 @@
+post:
+  tags:
+    - users
+  summary: Create Users
+  description: Create a **single** user.
+
+  operationId: insertUsers
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: header
+      name: 'Content-Type'
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: 'x-api-key'
+      required: false
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+    - in: body
+      name: body
+      description: User data structure.
+      required: true
+      schema:
+        $ref: './request/insertUsers.yml'
+  responses:
+    201:
+      description: Created.
+      schema:
+        $ref: './response/insertUsers_201.yml'
+    400:
+      description: Bad Request.
+      schema:
+        $ref: './response/insertUsers_400.yml'
+
+    403:
+      description: Forbidden.
+      schema:
+        $ref: '../../../definitions/common/response/403.yml'

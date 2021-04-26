@@ -1,0 +1,26 @@
+type: object
+description: Retorna sucesso da requisição e possível mensagem de erro.
+required:
+  - success
+  - message
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: false
+  message:
+    type: String
+    description: Mensagem de erro.
+  "type":
+    type: String
+    description: Tipo de erro.
+
+example:
+  success: false
+  message: Nome de variável já cadastrado.
+  type: VARIABLES_NAME_ALREADY_REGISTERED_ERROR
+  data:
+    ds_variable: Pagamento Preferencial 45454d3ssfd
+    id: 50ea2658-b507-4dcd-bcb2-7ae0053c198a
+    links:
+      self: "/v2/variables/50ea2658-b507-4dcd-bcb2-7ae0053c198a"

@@ -1,0 +1,24 @@
+type: object
+description: Returns user created.
+required:
+  - id
+  - email
+  - created_at
+  - updated_at
+properties:
+  id:
+    type: String
+    description: uuid.
+    example: '6630f837-40c7-4563-ac74-2224217191f2'
+  email:
+    type: String
+    description: User email.
+    example: 'bruce@gmail.com'
+  created_at:
+    type: String
+    description: Timestamp.
+    example: '2021-04-23T01:57:43.623Z'
+  updated_at:
+    type: String
+    description: Timestamp.
+    example: '2021-04-23T01:57:43.623Z'

@@ -1,0 +1,172 @@
+################################# Create Variables #################################
+post:
+  tags:
+    - variables
+  summary: Criação de variável
+  description: Adiciona uma variável em uma audiência.
+
+
+    Esta operação é síncrona, os dados estarão disponíveis imadiatamente.
+
+  operationId: insertVariable
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+    - in: query
+      name: "show_ids"
+      required: false
+      type: boolean
+      description: Flag para sinalizar se deve ser retornado id criado.
+
+    - in: body
+      name: body
+      description: Objeto Variável.
+      required: true
+      schema:
+        $ref: "./create/request/create.yml"
+  responses:
+    201:
+      description: Created.
+      schema:
+        $ref: "./create/response/201.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./create/response/422.yml"
+
+  x-code-samples:
+    $ref: "./create/x-code-samples.yml"
+
+################################# List variables #################################
+get:
+  tags:
+    - variables
+  summary: Listagem de variáveis
+  description: Retorna variáveis de uma audiência.
+  operationId: listAudienceVariables
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: query
+      name: type
+      description:
+        Parâmetro em formato string com tipo de variável que o cliente deseja filtrar.
+
+
+        Neste exemplo a seguir
+
+
+        `/v2/variables?type=activity&dimension=activities&limit=10&offset=0`
+
+
+        Você solicita 10 registros da primeira página de resultados que são do tipo "activity" (e da dimensão "acitivities" que iremos ver a seguir).
+
+      required: true
+      type: string
+      enum: [user, activity]
+
+    - in: query
+      name: dimension
+      description:
+        Parâmetro em formato string com a dimensão de variável que o cliente deseja filtrar (caso o type informado seja "activity", as dimensions possíveis serão "activities" e "items").
+
+
+        Neste exemplo a seguir
+
+
+        `/v2/variables?type=user&dimension=geography`
+
+
+        Você solicita variáveis que são do tipo usuário e da dimensão geografia.
+
+      required: false
+      type: string
+      enum:
+        [
+          activities,
+          items,
+          behavior,
+          demographic,
+          financial,
+          summary,
+          geography,
+        ]
+
+    - in: query
+      name: limit
+      description: limite de registros de variáveis a serem retornados.
+      required: false
+      type: number
+      default: 100
+
+    - in: query
+      name: offset
+      description: Subset ou página a ser retornada.
+      required: false
+      type: number
+      default: 0
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./list/response/200.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./list/response/422.yml"
+
+  x-code-samples:
+    $ref: "./list/x-code-samples.yml"

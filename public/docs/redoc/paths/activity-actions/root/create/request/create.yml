@@ -1,0 +1,13 @@
+type: object
+required:
+  - nm_activity_action
+  - is_active
+properties:
+  nm_activity_action:
+    type: String
+    description: Nome da ação de atividade
+    example: "Aquele nome que você respeita"
+  is_active:
+    type: boolean
+    description: Flag sinalizando se ação está ativa ou não.
+    example: true

@@ -1,0 +1,67 @@
+post:
+  tags:
+    - activities
+  summary: Criação/Importação de atividades
+  description: Adiciona uma **coleção** de atividades em uma audiência.
+
+
+    Esta operação depende de um processamento por parte do servidor para possíveis validações, logo, os dados não estarão disponíveis imadiatamente.
+
+
+    Quantidade de atividades no corpo da requisição `>=1 && <=100000`.
+
+
+    Caso no JSON exista mais de uma atividade com os mesmos `id_source`, `action` e `dimension`, a última será considerada.
+
+
+    Para enviar alguma informação no campo `variables`, tanto para a atividade quanto para o item, você pode criar variáveis com a rota [Criação de variáveis](#operation/insertVariable) e listar todas as variáveis existentes utilizando a rota [Listagem de variáveis](#operation/listAudienceVariables).
+
+
+    O campo `action` requer o **id** da ação. É possível criar uma nova ação com a rota [Criação de ação de atividade](#operation/createActivityActions) e listar todas as ações com a rota [Listagem de ações de atividade](#operation/listActivityActions). O campo `dimension` funciona da mesma forma, é possível criar uma dimensão com a rota [Criação de dimensão de atividade](#operation/createActivityDimensions) e listar com a rota [Listagem de dimensões de atividade](#operation/listActivityDimensions).
+
+
+    As variáveis com o **cd_dimension** `activities` e `items` são as únicas permitidas. A primeira deve estar na raíz e a segunda dentro do campo de **items**.
+
+
+    Lembre-se de enviar o `cd_variable`, que se encontra na [Listagem de variáveis](#operation/listAudienceVariables), como chave em `variables`.
+  operationId: insertActivities
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+    - in: body
+      name: body
+      description: Array de objetos do tipo Atividade.
+      required: true
+      schema:
+        $ref: "./request/insertActivities.yml"
+  responses:
+    201:
+      description: Created.
+      schema:
+        $ref: "./response/insertActivities_201.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "./response/insertActivities_400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"

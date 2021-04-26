@@ -1,0 +1,33 @@
+type: object
+description: Retorna success ou error
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    description: Dados de retorno
+    properties:
+      cd_variable:
+        type: string
+        description: Código da variável
+      id:
+        type: string
+        description: id da variável
+      links:
+        type: object
+        properties:
+          self:
+            type: string
+            description: URL para acessar o resource.
+example:
+  success: true
+  data:
+    cd_variable: pagamento_preferencial
+    id: 93a8d0f4-f973-4f27-ad8b-a3c1841a411d
+    links:
+      self: "/v2/variables/93a8d0f4-f973-4f27-ad8b-a3c1841a411d"

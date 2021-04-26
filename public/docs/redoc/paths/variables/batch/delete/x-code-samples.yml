@@ -1,0 +1,38 @@
+- lang: CURL
+  source: |
+    curl -X DELETE \
+    'https://bulk.beta.api.4all.com/v2/variables/batch' \
+    -H 'Content-Type: application/json' \
+    -H 'x-api-key: f3o4mc-3-kck34-f394' \
+    -d '{
+        "ids": [
+          "c554ae67-a92c-4883-b78e-cb0e873e2e99",
+          "fa051831-ad99-481f-ab68-b99482eaa1fd",
+          "3d6ca30c-a941-4213-95c8-af9d1b0655a4"
+        ]
+      }'
+
+- lang: NodejS Request
+  source: |
+    var request = require("request");
+
+    var options = { method: 'DELETE',
+      url: 'https://bulk.beta.api.4all.com/v2/variables/batch',
+      headers: { 'x-api-key': 'f3o4mc-3-kck34-f394',
+        'Content-Type': 'application/json'
+      },
+      body: {
+        ids: [
+          'c554ae67-a92c-4883-b78e-cb0e873e2e99',
+          'fa051831-ad99-481f-ab68-b99482eaa1fd',
+          '3d6ca30c-a941-4213-95c8-af9d1b0655a4'
+        ]
+      },
+      json: true
+    };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      console.log(body);
+    });

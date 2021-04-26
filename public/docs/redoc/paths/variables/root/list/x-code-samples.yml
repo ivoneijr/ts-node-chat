@@ -1,0 +1,24 @@
+# CURL
+- lang: CURL
+  source: |
+    curl -X GET \
+    'https://bulk.beta.api.4all.com/v2/variables?type=user&dimension=geography' \
+    -H 'Content-Type: application/json' \
+    -H 'x-api-key: f3o4mc-3-kck34-f394'
+# NODE
+- lang: NodejS Request
+  source: |
+    var request = require("request");
+
+    var options = { method: 'GET',
+      url: 'https://bulk.beta.api.4all.com/v2/variables',
+      qs: { type: 'user', dimension: 'geography' },
+      headers:
+      { 'x-api-key': 'f3o4mc-3-kck34-f394',
+        'Content-Type': 'application/json' } };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      console.log(body);
+    });

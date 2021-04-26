@@ -1,0 +1,33 @@
+type: object
+required:
+  - success
+  - messages
+  - type
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: false
+  messages:
+    type: array
+    description: Array de mensagens de erro.
+    items:
+      type: object
+      properties:
+        message:
+          type: string
+        path:
+          type: array
+        type:
+          type: string
+        context:
+          type: object
+          properties:
+            value:
+              type: "string"
+            valids:
+              type: array
+            key:
+              type: string
+            label:
+              type: string

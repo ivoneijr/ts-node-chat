@@ -1,0 +1,15 @@
+|
+  This documentation is intended to guide the developer on how to integrate with tsnode-api
+
+  The integration mechanism with tsnode-api is simple and was developed based on the REST architecture so that intermediate knowledge in programming language, http / https web protocols and manipulation of JSON files, are necessary to develop this integration.
+
+  In this documentation you will find examples of query operations and data manipulation.
+
+
+  ### Application/json
+  The communication data structure adopted is [JSON](https://www.json.org/). Therefore, the data sent in request body must be encoded in `UTF-8`. And de headers must indicate  `Content-Type: application/json`.
+
+  <style>
+  body {''
+  text-align: justify}
+  </style>

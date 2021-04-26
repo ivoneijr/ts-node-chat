@@ -1,0 +1,30 @@
+type: object
+description: Retorna success e a ação de atividade criada.
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    description: Dados de retorno
+    required:
+      - nm_activity_action
+      - is_active
+      - id_activity_action
+    properties:
+      nm_activity_action:
+        type: String
+        description: Nome da ação de atividade
+        example: "Aquele nome que você respeita"
+      is_active:
+        type: boolean
+        description: Flag sinalizando se ação está ativa ou não.
+        example: true
+      id_activity_action:
+        type: String
+        description: Id da ação criada.
+        example: "7bd3621b-ef32-4a1f-945b-02d1fc459851"

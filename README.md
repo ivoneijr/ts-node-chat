@@ -22,17 +22,17 @@ This example is an implementation of an api with websockets in order to maintain
 | Socket Server          | socket.io    |
 | CronJobs               | cron         |
 | Logs                   | Winston      |
-| Documentation          | TODO: redoc  |
+| Documentation          | Redoc        |
 | Test Suit              | TODO: ?      |
 | Custom error Handler   | TODO: ?      |
 
 ## TODO list
 
 ```sh
-[ ] Add api documentation (redoc)
 [ ] Add custom error handlers
 [ ] Add pm2
 [ ] Add test env
+[ ] Create docs for all routes
 ```
 
 ## Running Instructions

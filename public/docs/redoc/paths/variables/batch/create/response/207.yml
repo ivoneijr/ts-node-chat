@@ -1,0 +1,88 @@
+type: object
+description: Retorna success ou error
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    description: Dados de retorno
+    required:
+      - sent
+      - repeated
+      - passed
+      - error
+      - errors
+      - created
+    properties:
+      sent:
+        type: integer
+        description: Total de variáveis enviadas.
+        example: 5
+      repeated:
+        type: integer
+        description:
+          Total de variáveis enviadas que estão repetidas no momento do envio. (só será utilizado uma).
+
+          Validação é feita pelo campo `ds_variable`.
+        example: 1
+      passed:
+        type: integer
+        description: Total de variáveis que foram criadas.
+        example: 2
+      error:
+        type: integer
+        description: Total de erros que ocorreram.
+        example: 2
+      errors:
+        type: array
+        description: Lista de erros.
+        items:
+          type: object
+          properties:
+            id_error:
+              type: string
+              description: Algum erro interno ocorreu, entrar em contato informando `id_error` gerado para que seja possível analisar.
+            error:
+              type: object
+              description: Dados do erro.
+        example:
+          - id_error: 8881b4e8-b88f-4481-8524-e85afe16b7fa
+          - message: Nome de variável já cadastrado..
+            type: VARIABLES_NAME_ALREADY_REGISTERED_ERROR
+            data:
+              ds_variable: Plano Operadora
+              id: ee4d652b-d2c0-4268-b34e-549318663ae1
+              links:
+                self: /v2/variables/ee4d652b-d2c0-4268-b34e-549318663ae1
+      created:
+        type: array
+        description: Lista de variáveis criadas.
+        items:
+          type: object
+          properties:
+            cd_variable:
+              type: string
+              description: Código da variável
+            id:
+              type: string
+              description: id da variável
+            links:
+              type: object
+              properties:
+                self:
+                  type: string
+                  description: URL para acessar o resource.
+        example:
+          - cd_variable: plano_operadora
+            id: 93a8d0f4-f973-4f27-ad8b-a3c1841a411d
+            links:
+              self: "/v2/variables/93a8d0f4-f973-4f27-ad8b-a3c1841a411d"
+          - cd_variable: pagamento_preferencial
+            id: 92286bcc-4998-4557-83f5-77319c742f93
+            links:
+              self: "/v2/variables/92286bcc-4998-4557-83f5-77319c742f93"

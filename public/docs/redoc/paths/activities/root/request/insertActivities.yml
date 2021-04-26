@@ -1,0 +1,136 @@
+type: array
+items:
+  type: object
+  required:
+    - id_source
+    - title
+    - action
+    - dimension
+  properties:
+    id_source:
+      type: String
+      description: Identificador da atividade
+      example: "49f57179-b48f-4a80-85b7-e889d5d2fa09"
+    title:
+      type: String
+      description: Título de atividade
+      example: "Compra de livro: Homo Deus: Uma Breve História do Amanhã - Yuval Noah Harari"
+    action:
+      type: String
+      description: Id de ação.
+      example: "49f57179-b48f-4a80-85b7-e889d5d2fa09"
+    # template:
+    #   type: String
+    #   description: Id de template.
+    #   example: "49f57179-b48f-4a80-85b7-e889d5d2fa09"
+    dimension:
+      type: String
+      description: Id de dimensão.
+      example: "49f57179-b48f-4a80-85b7-e889d5d2fa09"
+    date:
+      type: String
+      description: Data de realização da atividade no formato `YYY-MM-DD HH:mm:ss`
+      example: "2019-02-26 15:30:00"
+    user:
+      type: object
+      description: Informações do Usuário. Uma das chaves deve ser enviada.
+      properties:
+        document:
+          type: String
+          description: Número de documento cpf **sem** caracteres especiais
+          example: "02426147016"
+        phone:
+          type: String
+          description: Número de telefone
+          example: "51999999999"
+        email:
+          type: String
+          description: E-mail válido
+          example: "bbenner@marvel.com"
+        id_source:
+          type: String
+          description: Identificação de usuário no sistema que utiliza a bulk-api
+          example: "999"
+        id_4all:
+          type: Number
+          description: Id 4all
+          example: 332455
+    variables:
+      type: object
+      description: Qualquer estrutura de dados desejada por parte do consumidor da api
+      properties:
+        cd_variable:
+          type: String
+          description: Qualquer chave/valor
+          example: "value"
+    'items':
+      type: array
+      description: Lista de items de atividade
+      items:
+        type: object
+        required:
+          - name
+          - sku
+        properties:
+          name:
+            type: String
+            description: Nome do item
+            example: "Macbook Pro"
+          sku:
+            type: String
+            description: Unidade de manutenção de estoque
+            example: "dads87SD4560V35F"
+          variables:
+            type: object
+            description: Qualquer estrutura de dados desejada por parte do consumidor da api
+            properties:
+              cd_variable:
+                type: String
+                description: Qualquer chave/valor
+                example: "value"
+    payment:
+      type: object
+      required:
+        - total_amount
+        - installments
+        - payment_mode
+        - status
+        - paid_at
+      description: Informações do pagamento relacionado à atividade
+      properties:
+        total_amount:
+          type: Number
+          description: Valor da transação
+          example: 10.00
+        discount:
+          type: Number
+          description: Desconto da transação
+          example: 2.00
+        installments:
+          type: Number
+          description: Quantiade de parcelas
+          example: 1
+        payment_mode:
+          type: String
+          description: Modo de pagamento. Atualmente somente é possível enviar `Crédito` e `Débito`.
+          example: "Crédito"
+        status:
+          type: String
+          description: 'Status da transação. Valores possíveis: `Cancelado`, `Negado`, `Pago`, `Falhou` e `Não Autorizado`.'
+          example: 'Pago'
+        id_4all:
+          type: Number
+          description: Id da transação na 4all.
+          example: 1234
+        requested_at:
+          type: String
+          description: Data de realização da atividade no formato `YYY-MM-DD HH:mm:ss`
+          example: "2019-02-26 15:30:00"
+        paid_at:
+          type: String
+          description: Data de pagamento no padrão `YYY-MM-DD HH:mm:ss`
+          example: "2019-02-26 15:30:00"
+        canceled_at:
+          type: String
+          description: Data de cancelamento no padrão `YYY-MM-DD HH:mm:ss`
+          example: "2019-02-26 15:30:00"

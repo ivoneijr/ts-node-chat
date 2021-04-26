@@ -1,0 +1,6 @@
+type: object
+properties:
+  email:
+    type: String
+    description: Email
+    example: 'Bruce Benner'

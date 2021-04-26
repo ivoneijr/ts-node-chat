@@ -1,0 +1,59 @@
+type: object
+description: Retorna alguns meta dados levados em consideração na consulta e o resultado.
+required:
+  - success
+  - total
+  - limit
+  - offset
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  total:
+    type: Number
+    description: Total de registros.
+    example: 100
+  limit:
+    type: Number
+    description: Limite de objetos para executar consulta.
+    example: 10
+  offset:
+    type: Number
+    description: Página utilizada para executar consulta.
+    example: 0
+  data:
+    type: array
+    description: Resultado da consulta de listagem de ações de atividade.
+    items:
+      type: object
+      properties:
+        id_activity_action:
+          type: string
+          description: Id de ação
+          example: "4eb3d190-febe-4b93-94c6-06a4023306a2"
+        id_audience:
+          type: string
+          description: Id da audiência
+          example: "a16be695-8601-11e8-9af2-e4a4714157e9"
+        nm_activity_action:
+          type: string
+          description: Nome da ação
+          example: "ac1"
+        is_custom:
+          type: boolean
+          description: Flag para sinalizar se a ação é do tipo customizada.
+          example: true
+        is_active:
+          type: boolean
+          description: Flag para sinalizar se a ação está ativa.
+          example: true
+        ts_created_at:
+          type: string
+          description: Timestamp de criação de ação.
+          example: "2019-02-21 20:18:27"
+        ts_updated_at:
+          type: string
+          description: Timestamp de atualização de ação
+          example: "2019-02-21 20:18:27"

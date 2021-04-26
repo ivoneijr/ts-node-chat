@@ -1,0 +1,117 @@
+################################# Show SingleProfile #################################
+get:
+  tags:
+    - single profiles
+  summary: Retorna detalhes de um perfil único.
+  description: Detalhes de um perfil único.
+  operationId: showSingleProfile
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: Identificador do perfil único.
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./show/response/200.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    404:
+      description: Not found.
+      schema:
+        $ref: "./show/response/404.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./show/response/422.yml"
+
+  x-code-samples:
+    $ref: "./show/x-code-samples.yml"
+
+################################# Delete SingleProfile #################################
+delete:
+  tags:
+    - single profiles
+  summary: Deleta um perfil único.
+  description: Esta operação é assíncrona, os dados vão ser deletados em um posterior momento, porém não vai mais estar disponível para consulta.
+  operationId: deleteSingleProfile
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: Identificador do perfil único
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./delete/response/200.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    404:
+      description: Not found.
+      schema:
+        $ref: "./delete/response/404.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./delete/response/422.yml"
+
+  x-code-samples:
+    $ref: "./delete/x-code-samples.yml"

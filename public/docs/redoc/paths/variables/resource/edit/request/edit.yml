@@ -1,0 +1,14 @@
+type: object
+properties:
+  ds_variable:
+    type: String
+    description: Descrição da variável.
+    example: "Loja mais frequentada"
+  nr_order:
+    type: integer
+    description: Número de ordenação da variável, utilizado para dar prefência em listagens de dados que utilizam as variáveis.
+    example: 3
+  is_multivalued:
+    type: boolean
+    description: Flag sinalizando se variável é multivalorada.
+    example: false

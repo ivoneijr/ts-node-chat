@@ -1,0 +1,52 @@
+get:
+  tags:
+    - activity templates
+  summary: Listagem de templates de atividade.
+  description: Retorna templates de atividade.
+  operationId: listActivityTemplates
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: query
+      name: limit
+      description: limite de registros serem retornados.
+      required: false
+      type: number
+
+    - in: query
+      name: offset
+      description: Subset ou página a ser retornada.
+      required: false
+      type: number
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./list/response/listActivityTemplates_200.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./list/response/listActivityTemplates_422.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"

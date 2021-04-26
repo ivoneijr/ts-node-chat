@@ -1,0 +1,27 @@
+type: object
+required:
+  - success
+  - message
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    properties:
+      id_onesignal:
+        type: String
+        description: Id no onesignal
+        example: "92286bcc-4998-4557-83f5-77319c742f93"
+      is_push_web_subscribed:
+        type: Boolean
+        description: Flag que sinaliza inscrição para receber pushs na web,
+        example: true
+      ds_onesignal_data:
+        type: object
+        description: estrutura de dados enviada para push web.
+      ds_user_data:
+        type: object
+        description: Estrutura de dados enviada após login.

@@ -1,0 +1,184 @@
+################################# Show Variable #################################
+get:
+  tags:
+    - variables
+  summary: Retorna detalhes de uma variável.
+  description: Detalhes de uma variável.
+  operationId: showVariable
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: Identificador da variável
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./show/response/200.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    404:
+      description: Not found.
+      schema:
+        $ref: "./show/response/404.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./show/response/422.yml"
+
+  x-code-samples:
+    $ref: "./show/x-code-samples.yml"
+
+################################# Delete Variables #################################
+delete:
+  tags:
+    - variables
+  summary: Deleta uma variável.
+  description: Esta operação é síncrona, os dados serão deletados imediatamente.
+  operationId: deleteVariable
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: Identificador da variável
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./delete/response/200.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    404:
+      description: Not found.
+      schema:
+        $ref: "./delete/response/404.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./delete/response/422.yml"
+
+  x-code-samples:
+    $ref: "./delete/x-code-samples.yml"
+
+################################# Update Variable #################################
+put:
+  tags:
+    - variables
+  summary: Atualiza uma variável.
+  description: Esta operação é síncrona, os dados serão atualizados imediatamente.
+  operationId: updateVariable
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: Identificador da variável
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+    - in: body
+      name: body
+      description: Pelo menos um dos itens deve ser informado.
+
+      required: true
+      schema:
+        $ref: "./edit/request/edit.yml"
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./edit/response/200.yml"
+    400:
+      description: Bad Request.
+      schema:
+        $ref: "../../../definitions/common/response/400.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    404:
+      description: Not found.
+      schema:
+        $ref: "./edit/response/404.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./edit/response/422.yml"
+
+  x-code-samples:
+    $ref: "./edit/x-code-samples.yml"

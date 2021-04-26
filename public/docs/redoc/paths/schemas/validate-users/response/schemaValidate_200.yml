@@ -1,0 +1,14 @@
+type: object
+description: Retorna success e se é válido.
+required:
+  - success
+  - is_valid
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  id_valid:
+    type: boolean
+    description: Identificador da validade do schema enviada.
+    example: true

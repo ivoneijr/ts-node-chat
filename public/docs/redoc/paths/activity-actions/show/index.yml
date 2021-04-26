@@ -1,0 +1,44 @@
+get:
+  tags:
+    - activity actions
+  summary: Retorna detalhes de uma ação de atividade.
+  description: Detalhes de uma ação de atividade.
+  operationId: showActivityActions
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./response/showActivityActions_200.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./response/showActivityActions_422.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"
+    404:
+      description: Not found.
+      schema:
+        $ref: "./response/showActivityActions_404.yml"

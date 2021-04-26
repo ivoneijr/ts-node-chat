@@ -1,0 +1,98 @@
+get:
+  tags:
+    - audience imports
+  summary: Listagem de importações
+  description: Retorna importações de uma audiência.
+  operationId: listAudienceImports
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: query
+      name: limit
+      description: limite de registros a serem retornados.
+      required: false
+      type: number
+
+    - in: query
+      name: offset
+      description: Subset ou página a ser retornada.
+      required: false
+      type: number
+
+    - in: query
+      name: status
+      description:
+        Parâmetro em formato array com os status que o cliente deseja filtrar.
+
+
+        Neste exemplo a seguir
+
+
+        `/v2/audience-imports?limit=10&offset=0&status[]=100&status[]=900`
+
+
+        Você solicita 3 registros da primeira página de resultados que incluem os status de upload concluído e upload iniciado.
+
+
+        100 -	Upload Concluído
+
+
+        200 -	Mapeamento Concluído
+
+
+        300 -	Importação em Andamento
+
+
+        400 -	Importação Concluída
+
+
+        500 -	Falha no Upload
+
+
+        600 -	Falha no Mapeamento
+
+
+        700 -	Falha na Importação
+
+
+        800 -	Status Desconhecido
+
+
+        900 -	Upload iniciado
+
+
+        1000 -	Upload em andamento
+      required: false
+      type: number
+
+    - in: header
+      name: "Content-Type"
+      required: true
+      type: string
+      description: application/json
+
+    - in: header
+      name: "x-api-key"
+      required: true
+      type: string
+      description: 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./response/listAudienceImports_200.yml"
+    422:
+      description: Unprocessable Entity.
+      schema:
+        $ref: "./response/listAudienceImports_422.yml"
+    401:
+      description: Unauthorized.
+      schema:
+        $ref: "../../../definitions/common/response/401.yml"
+    403:
+      description: Forbidden.
+      schema:
+        $ref: "../../../definitions/common/response/403.yml"

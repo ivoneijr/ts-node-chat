@@ -1,0 +1,77 @@
+type: object
+description: Retorna alguns meta dados levados em consideração na consulta e o resultado.
+required:
+  - success
+  - total
+  - limit
+  - offset
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  total:
+    type: Number
+    description: Total de registros.
+    example: 1
+  limit:
+    type: Number
+    description: Limite de objetos para executar consulta.
+    example: 100
+  offset:
+    type: Number
+    description: Página utilizada para executar consulta.
+    example: 0
+  data:
+    type: array
+    description: Resultado da consulta de listagem de perfís únicos.
+    items:
+      type: object
+      description: object (SingleProfile).
+      schema:
+      properties:
+        id:
+          type: string
+          description: Identificador do perfil único.
+          example: "68a81cb8-14de-11e9-88dd-15998c48f0b9"
+        nm_user:
+          type: string
+          description: Nome do usuário
+          example: "Adolfo Da Rosa Matos"
+        is_sms_subscribed:
+          type: boolean
+          description: Flag sinalizando se usuário aceita receber notificações sms.
+          example: true
+        is_push_subscribed:
+          type: boolean
+          description: Flag sinalizando se usuário aceita receber notificações push.
+          example: true
+        id_one_signal:
+          type: string
+          description: Identificador do perfíl único no One Signal.
+          example: 87f87b1d-241d-429c-be6c-ee36d1226940
+        is_bounce:
+          type: boolean
+          description: Flag sinalizando se e-mail é considerado bounce.
+          example: false
+        nr_phone:
+          type: string
+          description: Número do telefone.
+          example: "5551999999999"
+        ds_email:
+          type: string
+          description: E-mail do usuário
+          example: "user123@gmail.com"
+        is_email_subscribed:
+          type: boolean
+          description: Flag sinalizando se usuário aceita receber notificações de e-mail.
+          example: true
+        links:
+          type: object
+          description: Objeto com referência para o resource em questão.
+          properties:
+            self:
+              type: String
+              description: Referência para o resource em questão..
+              example: "/v2/single-profiles/68a81cb8-14de-11e9-88dd-15998c48f0b9"

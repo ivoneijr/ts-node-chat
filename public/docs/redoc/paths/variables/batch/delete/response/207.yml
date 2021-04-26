@@ -1,0 +1,49 @@
+type: object
+description: Retorna success ou error
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    description: Dados de retorno
+    required:
+      - sent
+      - deleted
+      - error
+      - errors
+    properties:
+      sent:
+        type: integer
+        description: Total de ids enviados.
+        example: 3
+      deleted:
+        type: integer
+        description: Total de variáveis que foram deletadas.
+        example: 1
+      error:
+        type: integer
+        description: Total de erros que ocorreram.
+        example: 2
+      errors:
+        type: array
+        description: Lista de erros.
+        items:
+          type: object
+          properties:
+            id_error:
+              type: string
+              description: Algum erro interno ocorreu, entrar em contato informando `id_error` gerado para que seja possível analisar.
+            error:
+              type: object
+              description: Dados do erro.
+        example:
+          - id_error: a1cd78f3-dbca-4c04-825f-bcd2d085128f
+          - message: Variável não encontrada.
+            type: VARIABLE_NOT_FOUND_ERROR
+            data:
+              id: 36450d15-4d37-4da9-b272-339070165ab6

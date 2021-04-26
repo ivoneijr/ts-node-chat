@@ -1,0 +1,9 @@
+type: object
+description: Retorna sucesso da requisição.
+required:
+  - success
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true

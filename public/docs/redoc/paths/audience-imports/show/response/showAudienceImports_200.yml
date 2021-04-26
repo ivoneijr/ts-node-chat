@@ -1,0 +1,45 @@
+type: object
+description: Retorna sucesso da requisição e detalhes de uma importação..
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  data:
+    type: object
+    properties:
+      id_audience_import:
+        type: string
+        description: Id da importação.
+        example: "5ec03657-da9a-4f9e-9542-0fa0990fdab6"
+      nm_audience_import:
+        type: string
+        description: Nome da importação.
+        example: "Importação [2019-02-06 13:15:32]"
+      cd_import_status:
+        type: string
+        description: Código de status de importação.
+        example:  100
+      ds_status:
+        type: string
+        description: Descrição de status de importação.
+        example: "Upload Concluído"
+      ts_ingested_at:
+        type: string
+        description: Data de ingestão de importação.
+        example: "2019-02-06 13:15:32"
+      ts_imported_at:
+        type: string
+        description: Data de importação.
+        example: "2019-02-06 13:15:32"
+      ts_created_at:
+        type: string
+        description: Data de criação de importação.
+        example: "2019-02-06 13:15:32"
+      ts_updated_at:
+        type: string
+        description: Data de atualização de importação.
+        example: "2019-02-06 13:15:33"

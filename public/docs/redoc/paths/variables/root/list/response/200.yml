@@ -1,0 +1,89 @@
+type: object
+description: Retorna alguns meta dados levados em consideração na consulta e o resultado.
+required:
+  - success
+  - total
+  - limit
+  - offset
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  total:
+    type: Number
+    description: Total de registros.
+    example: 100
+  limit:
+    type: Number
+    description: Limite de objetos para executar consulta.
+    example: 1
+  offset:
+    type: Number
+    description: Página utilizada para executar consulta.
+    example: 0
+  data:
+    type: array
+    description: Resultado da consulta de listagem de variáveis.
+    items:
+      type: object
+      schema:
+      properties:
+        id:
+          type: string
+          description: Id da variável.
+          example: "5ec03657-da9a-4f9e-9542-0fa0990fdab6"
+        cd_variable:
+          type: string
+          description: Código gerado para essa variável.
+          example: "loja_mais_frequentada"
+        ds_variable:
+          type: string
+          description: Descrição da variável, utilizada para criação do código.
+          example: "Loja mais frequentada"
+        cd_dimension:
+          type: string
+          description: Código da dimensão .
+          example: "behavior"
+        ds_dimension:
+          type: string
+          description: Descrição da dimensão.
+          example: Comportamento
+        cd_group:
+          type: string
+          description: Código do grupo da variável.
+          example: "expenses"
+        ds_group:
+          type: string
+          description: Descrição do grupo da variável.
+          example: "Consumo"
+        cd_subgroup:
+          type: string
+          description: Código do subgrupo da variável.
+          example: "expenses"
+        ds_subgroup:
+          type: string
+          description: Descrição do subgrupo da variável.
+          example: "Consumo"
+        cd_variable_type:
+          type: string
+          description: Código do tipo da variável.
+          enum: [string, number, boolean, date]
+          example: "string"
+        is_segmentable_key:
+          type: boolean
+          description: Flag sinalizando se variável é segmentada por identificador.
+          example: false
+        is_segmentable_value:
+          type: boolean
+          description: Flag sinalizando se variável é segmentada por valor.
+          example: true
+        is_multivalued:
+          type: boolean
+          description: Flag sinalizando se variável é multivalorada.
+          example: false
+        is_custom:
+          type: boolean
+          description: Flag sinalizando se variável é customizada (criada por usuário) ou de sistema.
+          example: true

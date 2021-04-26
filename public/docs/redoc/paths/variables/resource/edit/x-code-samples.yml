@@ -1,0 +1,34 @@
+- lang: CURL
+  source: |
+    curl -X PUT \
+    'https://bulk.beta.api.4all.com/v2/variables/bbc73920-f9e0-4858-a2a5-e6c03b0a8b29' \
+    -H 'Content-Type: application/json' \
+    -H 'x-api-key: f3o4mc-3-kck34-f394'
+    -d '{
+        "ds_variable": "Loja mais frequentada",
+        "is_multivalued": false,
+        "nr_order": 1
+      }'
+
+# NODE
+- lang: NodejS Request
+  source: |
+    var request = require("request");
+
+    var options = { method: 'PUT',
+      url: 'https://bulk.beta.api.4all.com/v2/variables/bbc73920-f9e0-4858-a2a5-e6c03b0a8b29',
+      headers: { 'x-api-key': 'f3o4mc-3-kck34-f394',
+        'Content-Type': 'application/json'
+      },
+      body: {
+        ds_variable: 'Loja mais frequentada',
+        is_multivalued: false,
+        nr_order: 1
+      }
+      };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      console.log(body);
+    });

@@ -1,0 +1,22 @@
+- lang: CURL
+  source: |
+    curl -X DELETE \
+    'https://bulk.beta.api.4all.com/v2/variables/bbc73920-f9e0-4858-a2a5-e6c03b0a8b29' \
+    -H 'Content-Type: application/json' \
+    -H 'x-api-key: f3o4mc-3-kck34-f394'
+
+- lang: NodejS Request
+  source: |
+    var request = require("request");
+
+    var options = { method: 'DELETE',
+      url: 'https://bulk.beta.api.4all.com/v2/variables/bbc73920-f9e0-4858-a2a5-e6c03b0a8b29',
+      headers:
+      { 'x-api-key': 'f3o4mc-3-kck34-f394',
+        'Content-Type': 'application/json' } };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      console.log(body);
+    });

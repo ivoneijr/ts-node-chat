@@ -1,0 +1,25 @@
+type: object
+description: Retorna success e o id de importação.
+required:
+  - success
+  - message
+  - data
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: true
+  message:
+    type: String
+    description: Mensagem de sucesso.
+    example: "Acompanhe o status da importação pela rota: GET /audience-imports/6630f837-40c7-4563-ac74-2224217191f3/"
+  data:
+    type: object
+    description: Dados de retorno
+    required:
+      - audience_import_id
+    properties:
+      audience_import_id:
+        type: String
+        description: Id da importação.
+        example: "6630f837-40c7-4563-ac74-2224217191f2"

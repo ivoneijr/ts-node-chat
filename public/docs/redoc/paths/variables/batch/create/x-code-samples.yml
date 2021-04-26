@@ -1,0 +1,129 @@
+# CURL
+- lang: CURL
+  source: |
+    curl -X POST \
+    'https://bulk.beta.api.4all.com/v2/variables?show_ids=true' \
+    -H 'Content-Type: application/json' \
+    -H 'x-api-key: f3o4mc-3-kck34-f394' \
+    -d [
+          {
+            "ds_variable": "Pagamento Preferencial",
+            "cd_dimension": "behavior",
+            "cd_variable_type": "string",
+            "cd_group": "expenses",
+            "is_segmentable_value": true,
+            "is_segmentable_key": false,
+            "is_multivalued": false,
+            "nr_order": 4
+          },
+          {
+            "ds_variable": "Marca Mais Consumida",
+            "cd_dimension": "behavior",
+            "cd_variable_type": "string",
+            "cd_group": "expenses",
+            "is_segmentable_value": true,
+            "is_segmentable_key": false,
+            "is_multivalued": false,
+            "nr_order": 5
+          },
+          {
+            "ds_variable": "Plano Operadora",
+            "cd_dimension": "demographic",
+            "cd_variable_type": "string",
+            "cd_group": "bio",
+            "is_segmentable_value": true,
+            "is_segmentable_key": false,
+            "is_multivalued": false,
+            "nr_order": 4
+          },
+          {
+            "ds_variable": "Marca Mais Consumida",
+            "cd_dimension": "behavior",
+            "cd_variable_type": "string",
+            "cd_group": "expenses",
+            "is_segmentable_value": true,
+            "is_segmentable_key": false,
+            "is_multivalued": false,
+            "nr_order": 8
+          },
+          {
+            "ds_variable": "Cheque Especial",
+            "cd_dimension": "financial",
+            "cd_variable_type": "string",
+            "cd_group": "loan",
+            "is_segmentable_value": true,
+            "is_segmentable_key": false,
+            "is_multivalued": false,
+            "nr_order": 9
+          }
+        ]
+# NODE
+- lang: NodejS Request
+  source: |
+    var request = require("request");
+
+    var options = { method: 'POST',
+      url: 'https://bulk.beta.api.4all.com/v2/variables?show_ids=true',
+      qs: { "show_ids": true },
+      headers:
+      { 'x-api-key': 'f3o4mc-3-kck34-f394',
+        'Content-Type': 'application/json' },
+        body: [
+          {
+            ds_variable: 'Pagamento Preferencial',
+            cd_dimension: 'behavior',
+            cd_variable_type: 'string',
+            cd_group: 'expenses',
+            is_segmentable_value: true,
+            is_segmentable_key: false,
+            is_multivalued: false,
+            nr_order: 4
+          },
+          {
+            ds_variable: 'Marca Mais Consumida',
+            cd_dimension: 'behavior',
+            cd_variable_type: 'string',
+            cd_group: 'expenses',
+            is_segmentable_value: true,
+            is_segmentable_key: false,
+            is_multivalued: false,
+            nr_order: 5
+          },
+          {
+            ds_variable: 'Plano Operadora',
+            cd_dimension: 'demographic',
+            cd_variable_type: 'string',
+            cd_group: 'bio',
+            is_segmentable_value: true,
+            is_segmentable_key: false,
+            is_multivalued: false,
+            nr_order: 4
+          },
+          {
+            ds_variable: 'Marca Mais Consumida',
+            cd_dimension: 'behavior',
+            cd_variable_type: 'string',
+            cd_group: 'expenses',
+            is_segmentable_value: true,
+            is_segmentable_key: false,
+            is_multivalued: false,
+            nr_order: 8
+          },
+          {
+            ds_variable: 'Cheque Especial',
+            cd_dimension: 'financial',
+            cd_variable_type: 'string',
+            cd_group: 'loan',
+            is_segmentable_value: true,
+            is_segmentable_key: false,
+            is_multivalued: false,
+            nr_order: 9
+            }
+          ],
+        };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      console.log(body);
+    });

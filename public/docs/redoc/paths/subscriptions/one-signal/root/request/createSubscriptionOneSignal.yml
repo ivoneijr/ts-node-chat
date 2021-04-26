@@ -1,0 +1,16 @@
+type: object
+properties:
+  id_onesignal:
+    type: String
+    description: "Identificador do device, obter através de: https://documentation.onesignal.com/docs/player-id#section-find-player-id-by-sdk/"
+    example: "92286bcc-4998-4557-83f5-77319c742f93"
+  is_push_web_subscribed:
+    type: Boolean
+    description: Flag que sinaliza inscrição para receber pushs na web,
+    example: true
+  ds_onesignal_data:
+    type: object
+    description: estrutura de dados enviada para push web.
+  ds_user_data:
+    type: object
+    description: Estrutura de dados enviada após login.

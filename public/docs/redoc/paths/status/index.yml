@@ -1,0 +1,14 @@
+get:
+  tags:
+    - status
+  summary: Verify application running
+  responses:
+    200:
+      description: Respond if application is running
+      schema:
+        type: object
+        properties:
+          status:
+            description: always returns It´s Alive!
+            type: string
+            default: 'It`s Alive'

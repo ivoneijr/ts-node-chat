@@ -1,0 +1,11 @@
+type: object
+properties:
+  ids:
+    type: array
+    items:
+      type: string
+      description: ids de varíáveis.
+    example:
+      - c554ae67-a92c-4883-b78e-cb0e873e2e99
+      - 36450d15-4d37-4da9-b272-339070165ab6
+      - 3d6ca30c-a941-4213-95c8-af9d1b0655a4

@@ -1,0 +1,19 @@
+type: object
+description: Retorna success e o id do e-mail
+required:
+  - success
+  - message
+  - type
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: false
+  message:
+    type: String
+    description: Mensagem de erro.
+    example: "Acesso proibido"
+  'type':
+    type: String
+    description: Tipo de erro
+    example: "ACCESS_FORBBIDEN_ERROR"

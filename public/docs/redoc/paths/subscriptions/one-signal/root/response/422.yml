@@ -1,0 +1,25 @@
+type: object
+description: Retorna successo da requisição e possível mensagem de erro.
+required:
+  - success
+  - message
+properties:
+  success:
+    type: boolean
+    description: Identificador do sucesso da requisição.
+    example: false
+  message:
+    type: String
+    description: Mensagem de erro.
+    example: "Erro ao fazer ou desfazer inscrição."
+  'type':
+    type: String
+    description: Tipo de erro.
+    example: "SUBSCRIBE_UNSUBSCRIBE_ERROR"
+  data:
+    type: object
+    properties:
+      id_error:
+        type: String
+        description: Identificador de erro para facilitar contato com suporte, caso necessário.
+        example: "e81b1430-17f3-4465-b4fb-34bac034aa1b"
