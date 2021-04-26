@@ -58,6 +58,8 @@ To execute workers run `yarn dev:worker`
 
 You can access the api docs on `http://localhost:3000/docs`
 
+To build a new version of documentation, you should have to change `public/docs/redoc/index.yml` path and run `yarn docs:build`
+
 ### Websockets Preview
 
 To access the application as a client access `http://localhost:3000/preview/client`
