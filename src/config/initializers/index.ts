@@ -6,6 +6,7 @@ import useSocket from './socket'
 import useStatic from './static'
 import useRoutes from './routes'
 import useLogger from './logger'
+import useGraphql from './graphql'
 
 const init = (app?: express.Application): any => {
   if (!app) {
@@ -16,6 +17,7 @@ const init = (app?: express.Application): any => {
   useStatic(app)
   useRoutes(app)
   useLogger()
+  useGraphql(app)
 
   const server = useSocket(app)
 
